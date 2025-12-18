@@ -30,10 +30,11 @@ class BaseMainWindow(QMainWindow):
     
     def _center_window(self):
         """Center window on screen"""
-        screen = self.screen().geometry()
-        x = (screen.width() - self.width()) // 2
-        y = (screen.height() - self.height()) // 2
-        self.move(x, y)
+        screen_geometry = self.screen().geometry() if self.screen() else None
+        if screen_geometry:
+            x = (screen_geometry.width() - self.width()) // 2
+            y = (screen_geometry.height() - self.height()) // 2
+            self.move(x, y)
 
 
 class AdminMainWindow(BaseMainWindow):
