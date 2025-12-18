@@ -1,6 +1,5 @@
 pyodbc
 PyQt6
-PyQt5
 opencv-python
 numpy
 ultralytics

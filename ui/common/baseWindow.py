@@ -2,8 +2,8 @@
 Base classes cho tất cả main windows.
 Tập trung style, title, và common functionality.
 """
-from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout
-from PyQt5.QtCore import Qt
+from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout
+from PyQt6.QtCore import Qt
 from ui.styles import getGlobalStyle
 
 
@@ -30,10 +30,11 @@ class BaseMainWindow(QMainWindow):
     
     def _center_window(self):
         """Center window on screen"""
-        from PyQt5.QtWidgets import QApplication
-        desktop = QApplication.desktop()
-        x = (desktop.width() - self.width()) // 2
-        y = (desktop.height() - self.height()) // 2
+        from PyQt6.QtWidgets import QApplication
+        from PyQt6.QtGui import QScreen
+        screen = QApplication.primaryScreen().geometry()
+        x = (screen.width() - self.width()) // 2
+        y = (screen.height() - self.height()) // 2
         self.move(x, y)
 
 
