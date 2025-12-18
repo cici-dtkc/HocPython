@@ -30,8 +30,7 @@ class BaseMainWindow(QMainWindow):
     
     def _center_window(self):
         """Center window on screen"""
-        from PyQt6.QtWidgets import QApplication
-        screen = QApplication.primaryScreen().geometry()
+        screen = self.screen().geometry()
         x = (screen.width() - self.width()) // 2
         y = (screen.height() - self.height()) // 2
         self.move(x, y)
