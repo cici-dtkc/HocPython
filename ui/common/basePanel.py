@@ -32,8 +32,8 @@ class BasePanel(QWidget):
     def _setup_title(self):
         """Thêm title label với formatting"""
         title_label = QLabel(self.title_text)
-        title_label.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        title_label.setFont(QFont('Arial', 16, weight=QFont.Weight.Bold))
+        title_label.setAlignment(Qt.AlignCenter)
+        title_label.setFont(QFont('Arial', 16, weight=QFont.Bold))
         title_label.setStyleSheet("color: #2E86C1; margin-bottom: 10px;")
         self.main_layout.insertWidget(0, title_label)
     

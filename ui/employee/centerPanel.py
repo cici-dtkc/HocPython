@@ -61,15 +61,15 @@ class CenterPanel(QWidget):
 
                 videoLabel = QLabel(labelText)
                 # Giảm font size xuống 12px để phù hợp với DPI scaling của Qt6
-                videoLabel.setFont(QFont('Arial', 12, weight=QFont.Weight.Bold))
+                videoLabel.setFont(QFont('Arial', 12, weight=QFont.Bold))
                 videoLabel.setStyleSheet(
                     f"background-color: rgba(0, 0, 0, 180); padding: 4px; border-radius: 3px; {labelStyle}"
                 )
-                frameVLayout.addWidget(videoLabel, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
+                frameVLayout.addWidget(videoLabel, alignment=Qt.AlignTop | Qt.AlignLeft)
 
                 # --- PHẦN ĐIỀU CHỈNH CHÍNH ---
                 imgLabel = QLabel()
-                imgLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+                imgLabel.setAlignment(Qt.AlignCenter)
                 imgLabel.setStyleSheet("border: 1px solid #ffffff;")
 
                 # 1. Tải Pixmap

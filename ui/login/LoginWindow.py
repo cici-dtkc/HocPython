@@ -94,8 +94,8 @@ class LoginWindow(QDialog):
         msg = QMessageBox()
         msg.setWindowTitle("Login Error")
         msg.setText(message)
-        msg.setIcon(QMessageBox.Icon.Critical)
-        msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msg.setIcon(QMessageBox.Critical)
+        msg.setStandardButtons(QMessageBox.Ok)
 
         msg.setStyleSheet("""
             QMessageBox {
