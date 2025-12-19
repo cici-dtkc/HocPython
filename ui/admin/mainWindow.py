@@ -1,8 +1,8 @@
 import sys
 
-from PyQt6.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QTabWidget, QMenuBar, QApplication
-from PyQt6.QtCore import pyqtSignal
-from PyQt6.QtGui import QAction
+from PyQt5.QtWidgets import QMainWindow, QWidget, QVBoxLayout, QTabWidget, QMenuBar, QApplication
+from PyQt5.QtCore import pyqtSignal
+from PyQt5.QtGui import QAction
 
 from controllers.CardController import MonthlyCardController
 from services.Session import Session

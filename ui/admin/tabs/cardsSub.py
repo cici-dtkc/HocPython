@@ -1,10 +1,10 @@
-from PyQt6.QtGui import QIcon, QAction
-from PyQt6.QtWidgets import (
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
     QPushButton, QTableWidget, QTableWidgetItem, QFrame, QHeaderView, QCheckBox, QDialog, QDateEdit, QMessageBox,
-    QComboBox, QSpinBox
+    QComboBox, QSpinBox, QAction
 )
-from PyQt6.QtCore import Qt, QSize, pyqtSignal, QDate
+from PyQt5.QtCore import Qt, QSize, pyqtSignal, QDate
 from datetime import datetime, timedelta
 
 
@@ -439,7 +439,7 @@ class MonthlyCardLogTab(QWidget):
         no_button.setText("Hủy")
 
         # Chạy dialog
-        result = msg_box.exec()  # exec() an toàn hơn exec_() trong PyQt6
+        result = msg_box.exec_()  # exec_() is used in PyQt5
         return result == QMessageBox.StandardButton.Yes
 
     def on_delete_button_clicked(self, card_data_object):

@@ -1,8 +1,8 @@
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QTableWidget, QTableWidgetItem,
     QTabWidget, QDateEdit, QPushButton
 )
-from PyQt6.QtCore import Qt, QDate
+from PyQt5.QtCore import Qt, QDate
 
 try:
     from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
@@ -76,7 +76,7 @@ class StatsTab(QWidget):
         main_layout = QVBoxLayout()
 
         title = QLabel("THỐNG KÊ VÀ BÁO CÁO BÃI XE")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title.setAlignment(Qt.AlignCenter)
         title.setStyleSheet("font-size:22px; font-weight:bold; color:#2E86C1; padding:10px;")
         main_layout.addWidget(title)
 

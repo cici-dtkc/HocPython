@@ -1,8 +1,8 @@
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QGridLayout, QLabel, QFrame, QSizePolicy, QSpacerItem
 )
-from PyQt6.QtGui import QFont
-from PyQt6.QtCore import Qt
+from PyQt5.QtGui import QFont
+from PyQt5.QtCore import Qt
 
 from controllers.StaffController import StaffController
 from model.Card import Card
@@ -12,7 +12,7 @@ from model.MonthlyCard import MonthlyCard
 class LeftPanel(QWidget):
     """
     Khu vực cột trái: Thông tin Cảnh báo, Phí và Thông tin Thẻ.
-    (Đã tối ưu hóa kích thước cho PyQt6)
+    (Đã tối ưu hóa kích thước cho PyQt5)
     """
 
     def __init__(self, controller: StaffController, parent=None):
@@ -29,7 +29,7 @@ class LeftPanel(QWidget):
         # Logo
         logoLabel = QLabel("GIỮ XE")
         logoLabel.setObjectName("ParkingLogo")
-        vLayout.addWidget(logoLabel, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
+        vLayout.addWidget(logoLabel, alignment=Qt.AlignTop | Qt.AlignLeft)
 
         # --- 1. THÔNG TIN CẢNH BÁO / THÔNG TIN CHUNG ---
         titleInfoLabel = QLabel("THÔNG TIN CẢNH BÁO")
@@ -43,9 +43,9 @@ class LeftPanel(QWidget):
         statusVLayout = QVBoxLayout(statusFrame)
 
         self.__statusLabel1 = QLabel("KHÁCH HÀNG CÓ THẺ THÁNG")
-        self.__statusLabel1.setFont(QFont('Arial', 16, weight=QFont.Weight.Bold))  # Giảm font
+        self.__statusLabel1.setFont(QFont('Arial', 16, weight=QFont.Bold))  # Giảm font
         self.__statusLabel1.setStyleSheet("color: white;")
-        statusVLayout.addWidget(self.__statusLabel1, alignment=Qt.AlignmentFlag.AlignCenter)
+        statusVLayout.addWidget(self.__statusLabel1, alignment=Qt.AlignCenter)
 
         vLayout.addWidget(statusFrame)
 
@@ -74,10 +74,10 @@ class LeftPanel(QWidget):
         bsVaoVLayout.setContentsMargins(8, 3, 8, 3)  # Giảm margin
 
         self.__bsVaoLabel = QLabel("Trống")
-        self.__bsVaoLabel.setFont(QFont('Arial', 30, weight=QFont.Weight.Bold))  # Giảm font
+        self.__bsVaoLabel.setFont(QFont('Arial', 30, weight=QFont.Bold))  # Giảm font
         self.__bsVaoLabel.setStyleSheet("color: #f1c40f;")
 
-        bsVaoVLayout.addWidget(self.__bsVaoLabel, alignment=Qt.AlignmentFlag.AlignCenter)
+        bsVaoVLayout.addWidget(self.__bsVaoLabel, alignment=Qt.AlignCenter)
         infoLayout.addWidget(bsVaoFrame, 1, 0)
 
         # Hàng 2: Biển số Ra Label
@@ -100,10 +100,10 @@ class LeftPanel(QWidget):
         bsRaVLayout.setContentsMargins(8, 3, 8, 3)
 
         self.__bsRaLabel = QLabel("Trống")
-        self.__bsRaLabel.setFont(QFont('Arial', 30, weight=QFont.Weight.Bold))  # Giảm font
+        self.__bsRaLabel.setFont(QFont('Arial', 30, weight=QFont.Bold))  # Giảm font
         self.__bsRaLabel.setStyleSheet("color: #f1c40f;")
 
-        bsRaVLayout.addWidget(self.__bsRaLabel, alignment=Qt.AlignmentFlag.AlignCenter)
+        bsRaVLayout.addWidget(self.__bsRaLabel, alignment=Qt.AlignCenter)
         infoLayout.addWidget(bsRaFrame, 3, 0)
 
         # Hàng 4, 5: SỐ NGÀY GỬI
@@ -112,9 +112,9 @@ class LeftPanel(QWidget):
         infoLayout.addWidget(durationLabel, 4, 0)
 
         self.__durationValue = QLabel("1 NGÀY 08 GIỜ")
-        self.__durationValue.setFont(QFont('Arial', 16, weight=QFont.Weight.Bold))  # Giảm font
+        self.__durationValue.setFont(QFont('Arial', 16, weight=QFont.Bold))  # Giảm font
         self.__durationValue.setStyleSheet("color: #f1c40f;")
-        infoLayout.addWidget(self.__durationValue, 5, 0, alignment=Qt.AlignmentFlag.AlignHCenter)
+        infoLayout.addWidget(self.__durationValue, 5, 0, alignment=Qt.AlignHCenter)
 
         # Hàng 6: Phí giữ xe
         infoLayout.addWidget(QLabel("PHÍ GIỮ XE"), 6, 0)
@@ -127,7 +127,7 @@ class LeftPanel(QWidget):
 
         self.__fee_label = QLabel("0 VNĐ")
         self.__fee_label.setObjectName("BigNumber")
-        feeVLayout.addWidget(self.__fee_label, alignment=Qt.AlignmentFlag.AlignCenter)
+        feeVLayout.addWidget(self.__fee_label, alignment=Qt.AlignCenter)
 
         # Hàng 7: Khung Phí giữ xe
         infoLayout.addWidget(feeFrame, 7, 0, 1, 1)
@@ -165,7 +165,7 @@ class LeftPanel(QWidget):
             value.setStyleSheet("color: #f1c40f; font-weight: bold; font-size: 12px;")  # Giảm font
 
             cardGridLayout.addWidget(label, i, 0)
-            cardGridLayout.addWidget(value, i, 1, alignment=Qt.AlignmentFlag.AlignRight)
+            cardGridLayout.addWidget(value, i, 1, alignment=Qt.AlignRight)
             self.__card_info_labels[labelText] = value
 
         # Giãn cách cho cột dữ liệu

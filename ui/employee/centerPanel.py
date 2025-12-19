@@ -1,10 +1,10 @@
 
 import cv2
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QGridLayout, QLabel, QFrame, QSizePolicy
 )
-from PyQt6.QtGui import QFont, QPixmap, QImage
-from PyQt6.QtCore import Qt
+from PyQt5.QtGui import QFont, QPixmap, QImage
+from PyQt5.QtCore import Qt
 
 from controllers.StaffController import StaffController
 
