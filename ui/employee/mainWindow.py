@@ -1,6 +1,5 @@
-from PyQt6.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QMenuBar
-from PyQt6.QtCore import Qt, QSize, pyqtSignal
-from PyQt6.QtGui import QAction
+from PyQt5.QtWidgets import QMainWindow, QWidget, QHBoxLayout, QMenuBar, QAction
+from PyQt5.QtCore import Qt, QSize, pyqtSignal
 
 from controllers.StaffController import StaffController
 from ui.employee.leftPanel import LeftPanel

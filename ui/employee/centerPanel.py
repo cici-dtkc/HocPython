@@ -1,10 +1,10 @@
 
 import cv2
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QGridLayout, QLabel, QFrame, QSizePolicy
 )
-from PyQt6.QtGui import QFont, QPixmap, QImage
-from PyQt6.QtCore import Qt
+from PyQt5.QtGui import QFont, QPixmap, QImage
+from PyQt5.QtCore import Qt
 
 from controllers.StaffController import StaffController
 
@@ -61,15 +61,15 @@ class CenterPanel(QWidget):
 
                 videoLabel = QLabel(labelText)
                 # Giảm font size xuống 12px để phù hợp với DPI scaling của Qt6
-                videoLabel.setFont(QFont('Arial', 12, weight=QFont.Weight.Bold))
+                videoLabel.setFont(QFont('Arial', 12, weight=QFont.Bold))
                 videoLabel.setStyleSheet(
                     f"background-color: rgba(0, 0, 0, 180); padding: 4px; border-radius: 3px; {labelStyle}"
                 )
-                frameVLayout.addWidget(videoLabel, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignLeft)
+                frameVLayout.addWidget(videoLabel, alignment=Qt.AlignTop | Qt.AlignLeft)
 
                 # --- PHẦN ĐIỀU CHỈNH CHÍNH ---
                 imgLabel = QLabel()
-                imgLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
+                imgLabel.setAlignment(Qt.AlignCenter)
                 imgLabel.setStyleSheet("border: 1px solid #ffffff;")
 
                 # 1. Tải Pixmap

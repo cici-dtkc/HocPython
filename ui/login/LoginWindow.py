@@ -1,6 +1,6 @@
-from PyQt6.QtWidgets import QDialog, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox, QHBoxLayout, QWidget
-from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QFont
+from PyQt5.QtWidgets import QDialog, QVBoxLayout, QLabel, QLineEdit, QPushButton, QMessageBox, QHBoxLayout, QWidget
+from PyQt5.QtCore import Qt, pyqtSignal
+from PyQt5.QtGui import QFont
 
 
 class LoginWindow(QDialog):
@@ -25,9 +25,8 @@ class LoginWindow(QDialog):
 
         # Tiêu đề
         title = QLabel("HỆ THỐNG QUẢN LÝ BÃI XE")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        # Sửa QFont.Bold -> QFont.Weight.Bold
-        title.setFont(QFont("Arial", 16, QFont.Weight.Bold))
+        title.setAlignment(Qt.AlignCenter)
+        title.setFont(QFont("Arial", 16, QFont.Bold))
         title.setStyleSheet("color: #2E86C1;")
         layout.addWidget(title)
 
@@ -95,8 +94,8 @@ class LoginWindow(QDialog):
         msg = QMessageBox()
         msg.setWindowTitle("Login Error")
         msg.setText(message)
-        msg.setIcon(QMessageBox.Icon.Critical)
-        msg.setStandardButtons(QMessageBox.StandardButton.Ok)
+        msg.setIcon(QMessageBox.Critical)
+        msg.setStandardButtons(QMessageBox.Ok)
 
         msg.setStyleSheet("""
             QMessageBox {
@@ -120,4 +119,4 @@ class LoginWindow(QDialog):
             }
         """)
 
-        msg.exec()
+        msg.exec_()

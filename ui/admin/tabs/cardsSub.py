@@ -1,10 +1,10 @@
-from PyQt6.QtGui import QIcon, QAction
-from PyQt6.QtWidgets import (
+from PyQt5.QtGui import QIcon
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QLineEdit,
     QPushButton, QTableWidget, QTableWidgetItem, QFrame, QHeaderView, QCheckBox, QDialog, QDateEdit, QMessageBox,
-    QComboBox, QSpinBox
+    QComboBox, QSpinBox, QAction
 )
-from PyQt6.QtCore import Qt, QSize, pyqtSignal, QDate
+from PyQt5.QtCore import Qt, QSize, pyqtSignal, QDate
 from datetime import datetime, timedelta
 
 
@@ -426,21 +426,21 @@ class MonthlyCardLogTab(QWidget):
     # delete
     def show_confirmation_dialog(self, title: str, message: str) -> bool:
         msg_box = QMessageBox(self)
-        msg_box.setIcon(QMessageBox.Icon.Warning)
+        msg_box.setIcon(QMessageBox.Warning)
         msg_box.setWindowTitle(title)
         msg_box.setText(message)
-        msg_box.setStandardButtons(QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No)
-        msg_box.setDefaultButton(QMessageBox.StandardButton.No)
+        msg_box.setStandardButtons(QMessageBox.Yes | QMessageBox.No)
+        msg_box.setDefaultButton(QMessageBox.No)
 
         # Tùy chỉnh nút
-        yes_button = msg_box.button(QMessageBox.StandardButton.Yes)
+        yes_button = msg_box.button(QMessageBox.Yes)
         yes_button.setText("Xóa")
-        no_button = msg_box.button(QMessageBox.StandardButton.No)
+        no_button = msg_box.button(QMessageBox.No)
         no_button.setText("Hủy")
 
         # Chạy dialog
-        result = msg_box.exec()  # exec() an toàn hơn exec_() trong PyQt6
-        return result == QMessageBox.StandardButton.Yes
+        result = msg_box.exec_()  # exec_() is used in PyQt5
+        return result == QMessageBox.Yes
 
     def on_delete_button_clicked(self, card_data_object):
 

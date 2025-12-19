@@ -1,5 +1,5 @@
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QSpinBox, QHBoxLayout, QMessageBox
-from PyQt6.QtCore import Qt
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QLabel, QLineEdit, QPushButton, QSpinBox, QHBoxLayout, QMessageBox
+from PyQt5.QtCore import Qt
 import json
 from pathlib import Path
 from datetime import datetime
@@ -29,7 +29,7 @@ class ParkingConfigTab(QWidget):
         layout.setContentsMargins(10, 10, 10, 10)
 
         title = QLabel("Cấu hình bãi xe và giá thẻ")
-        title.setAlignment(Qt.AlignmentFlag.AlignLeft)
+        title.setAlignment(Qt.AlignLeft)
         title.setStyleSheet("font-weight: bold; font-size: 14px; margin-bottom: 8px;")
         layout.addWidget(title)
 

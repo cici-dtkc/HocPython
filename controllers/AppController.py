@@ -5,7 +5,7 @@ from ui import EmployeeMainWindow
 from ui.login.LoginWindow import LoginWindow
 from ui.admin.mainWindow import ParkingManagementApp
 import sys
-from PyQt6.QtWidgets import QApplication
+from PyQt5.QtWidgets import QApplication
 
 class AppController:
     def __init__(self):

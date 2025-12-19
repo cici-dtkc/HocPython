@@ -2,9 +2,9 @@
 Logout Handler for managing logout functionality across the application
 """
 
-from PyQt6.QtWidgets import QMessageBox
+from PyQt5.QtWidgets import QMessageBox
 # Đảm bảo import đúng cho các hằng số QObject và pyqtSignal
-from PyQt6.QtCore import pyqtSignal, QObject
+from PyQt5.QtCore import pyqtSignal, QObject
 
 
 class LogoutHandler(QObject):
@@ -28,12 +28,11 @@ class LogoutHandler(QObject):
                 window,
                 "Xác nhận đăng xuất",
                 "Bạn có chắc chắn muốn đăng xuất?",
-                # Sửa lỗi PyQt6: Dùng QStandardButton.Yes | QStandardButton.No
-                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.No
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
             )
 
-            if reply == QMessageBox.StandardButton.Yes:
+            if reply == QMessageBox.Yes:
                 # Đóng cửa sổ hiện tại
                 window.close()
                 # Phát tín hiệu đăng xuất
@@ -51,9 +50,8 @@ class LogoutHandler(QObject):
                 window,
                 "Đăng xuất",
                 "Bạn muốn đăng xuất khỏi hệ thống?",
-                # Sửa lỗi PyQt6: Dùng QStandardButton.Yes | QStandardButton.StandardButton.No
-                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
-                QMessageBox.StandardButton.No
+                QMessageBox.Yes | QMessageBox.No,
+                QMessageBox.No
             )
-            return reply == QMessageBox.StandardButton.Yes
+            return reply == QMessageBox.Yes
         return True

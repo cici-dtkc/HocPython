@@ -1,7 +1,7 @@
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QLabel, QLineEdit, QHBoxLayout, QPushButton, QMessageBox, QDateEdit
 )
-from PyQt6.QtCore import Qt, QDate
+from PyQt5.QtCore import Qt, QDate
 from datetime import datetime, timedelta
 
 

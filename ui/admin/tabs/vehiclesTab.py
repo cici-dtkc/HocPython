@@ -1,8 +1,8 @@
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QLineEdit, QHBoxLayout,
     QPushButton, QTableWidget, QTableWidgetItem, QHeaderView
 )
-from PyQt6.QtCore import Qt
+from PyQt5.QtCore import Qt
 
 
 class VehicleTab(QWidget):
@@ -19,7 +19,7 @@ class VehicleTab(QWidget):
         #        TIÊU ĐỀ
         # =========================
         title = QLabel("QUẢN LÝ PHƯƠNG TIỆN")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title.setAlignment(Qt.AlignCenter)
         title.setStyleSheet("""
             font-size:22px;
             font-weight:bold;

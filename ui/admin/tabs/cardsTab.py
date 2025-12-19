@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QWidget, QVBoxLayout, QTabWidget
+from PyQt5.QtWidgets import QWidget, QVBoxLayout, QTabWidget
 from ui.admin.tabs.cardsSub import MonthlyCardLogTab, SingleCardLogTab
 
 

@@ -2,12 +2,12 @@
 # Tối ưu: Đặt QImage.Format_RGB888 cho rõ ràng hơn (dù đã là default)
 # Tối ưu: Thay đổi index camera ra để tránh xung đột nếu có 2 webcam
 
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QHBoxLayout, QLabel, QFrame, QSizePolicy,
     QSpacerItem, QTableWidget, QTableWidgetItem, QHeaderView, QPushButton, QFileDialog
 )
-from PyQt6.QtGui import QFont, QImage, QPixmap
-from PyQt6.QtCore import Qt, QTimer
+from PyQt5.QtGui import QFont, QImage, QPixmap
+from PyQt5.QtCore import Qt, QTimer
 import cv2
 
 from controllers.StaffController import StaffController
@@ -41,7 +41,7 @@ class RightPanel(QWidget):
         # --- CAMERA HÌNH ẢNH ---
         titleCameraLabel = QLabel("CAMERA HÌNH ẢNH (VÀO / RA)")
         titleCameraLabel.setObjectName("TitleLabel")
-        vLayout.addWidget(titleCameraLabel, alignment=Qt.AlignmentFlag.AlignTop | Qt.AlignmentFlag.AlignRight)
+        vLayout.addWidget(titleCameraLabel, alignment=Qt.AlignTop | Qt.AlignRight)
 
         # Nút chuyển chế độ camera / upload
         # Nút chuyển chế độ camera / upload cho cả VÀO và RA
@@ -75,8 +75,8 @@ class RightPanel(QWidget):
         self.entryCameraLabel = QLabel()
         self.entryCameraLabel.setFixedSize(320, 240)
         self.entryCameraLabel.setStyleSheet("background-color: black; border: 2px solid #ffffff;")
-        self.entryCameraLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        entryLayout.addWidget(entryTitle, alignment=Qt.AlignmentFlag.AlignCenter)
+        self.entryCameraLabel.setAlignment(Qt.AlignCenter)
+        entryLayout.addWidget(entryTitle, alignment=Qt.AlignCenter)
         entryLayout.addWidget(self.entryCameraLabel)
 
         # Camera ra
@@ -86,14 +86,14 @@ class RightPanel(QWidget):
         self.exitCameraLabel = QLabel()
         self.exitCameraLabel.setFixedSize(320, 240)
         self.exitCameraLabel.setStyleSheet("background-color: black; border: 2px solid #ffffff;")
-        self.exitCameraLabel.setAlignment(Qt.AlignmentFlag.AlignCenter)
-        exitLayout.addWidget(exitTitle, alignment=Qt.AlignmentFlag.AlignCenter)
+        self.exitCameraLabel.setAlignment(Qt.AlignCenter)
+        exitLayout.addWidget(exitTitle, alignment=Qt.AlignCenter)
         exitLayout.addWidget(self.exitCameraLabel)
 
         camerasLayout.addLayout(entryLayout)
         camerasLayout.addLayout(exitLayout)
 
-        vLayout.addWidget(camerasFrame, alignment=Qt.AlignmentFlag.AlignCenter)
+        vLayout.addWidget(camerasFrame, alignment=Qt.AlignCenter)
 
         # --- CÁC LƯỢT VÀO RA GẦN ĐÂY ---
         titleHistoryLabel = QLabel("CÁC LƯỢT VÀO RA GẦN ĐÂY")
@@ -139,9 +139,9 @@ class RightPanel(QWidget):
 
         # Logo
         vdiLogoLabel = QLabel("VDI")
-        vdiLogoLabel.setFont(QFont('Arial', 20, weight=QFont.Weight.Bold))
+        vdiLogoLabel.setFont(QFont('Arial', 20, weight=QFont.Bold))
         vdiLogoLabel.setStyleSheet("color: #ffffff;")
-        vLayout.addWidget(vdiLogoLabel, alignment=Qt.AlignmentFlag.AlignBottom | Qt.AlignmentFlag.AlignRight)
+        vLayout.addWidget(vdiLogoLabel, alignment=Qt.AlignBottom | Qt.AlignRight)
 
     def _initCameras(self):
         # --- Camera vào (index 0) ---

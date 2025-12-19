@@ -1,6 +1,6 @@
 def getGlobalStyle():
     """
-    Trả về CSS stylesheet đã điều chỉnh cho PyQt6.
+    Trả về CSS stylesheet đã điều chỉnh cho PyQt5.
     """
     return """
         /* === MAIN WINDOW === */

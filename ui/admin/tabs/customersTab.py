@@ -1,8 +1,8 @@
-from PyQt6.QtWidgets import (
+from PyQt5.QtWidgets import (
     QWidget, QVBoxLayout, QLabel, QLineEdit, QHBoxLayout, QPushButton,
     QTableWidget, QTableWidgetItem, QHeaderView, QMessageBox, QDialog
 )
-from PyQt6.QtCore import Qt
+from PyQt5.QtCore import Qt
 from ui.common.renewalDialog import RenewalDialog
 from datetime import datetime
 
@@ -22,7 +22,7 @@ class CustomerTab(QWidget):
         #  TIÊU ĐỀ
         # ================================
         title = QLabel("QUẢN LÝ KHÁCH HÀNG")
-        title.setAlignment(Qt.AlignmentFlag.AlignCenter)
+        title.setAlignment(Qt.AlignCenter)
         title.setStyleSheet("""
             font-size: 22px;
             font-weight: bold;
@@ -149,7 +149,7 @@ class CustomerTab(QWidget):
                 current_end = end_item.text()
 
         dlg = RenewalDialog(self, email=email, current_end=current_end, suggested_fee=suggested_fee)
-        if dlg.exec() == QDialog.DialogCode.Accepted:
+        if dlg.exec_() == QDialog.Accepted:
             # Optionally update note column to reflect that a notice was 'sent'
             if selected and len(selected) == 1:
                 r = selected[0].row()
